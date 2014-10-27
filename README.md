@@ -49,7 +49,7 @@ person.bind("name", {
 npm install bindable-object --save-exact
 ```
 
-#### Object(properties)
+#### BindableObject(properties)
 
 creates a new bindable object
 
