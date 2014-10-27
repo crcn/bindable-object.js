@@ -1,13 +1,15 @@
 [![Build Status](https://travis-ci.org/mojo-js/bindable-object.js.svg?branch=master)](https://travis-ci.org/mojo-js/bindable-object.js)
 
+Fast data-binding library 
+
 Two-way data binding means linking properties of two separate objects - when one changes, the other will automatically update with that change.  It enables much easier interactions between data models and UIs, among other uses outside of MVC.
 
 
 
 ```javascript
-var bindable = require("bindable");
+var BindableObject = require("bindable-object");
 
-var person = new bindable.Object({
+var person = new BindableObject({
   name: "craig",
   last: "condon",
   location: {
@@ -44,7 +46,7 @@ person.bind("name", {
 ### Installation
 
 ```
-npm install bindable --save-exact
+npm install bindable-object --save-exact
 ```
 
 #### Object(properties)
@@ -56,12 +58,11 @@ creates a new bindable object
 Returns a property on the bindable object
 
 ```javascript
-var bindable = require("bindable@0.6.1");
-var obj = new bindable.Object({ city: { name: "SF" } });
+var obj = new BindableObject({ city: { name: "SF" } });
 console.log(obj.get("city"));      // { name: "SF" }
-console.log("no getter", bindable.city); // { name: "SF" }
+console.log("no getter", obj.city); // { name: "SF" }
 console.log(obj.get("city.name")); // SF
-console.log("no getter", bindable.city.name); // { name: "SF" }
+console.log("no getter", obj.city.name); // { name: "SF" }
 ```
 
 #### set(property, value)
@@ -69,8 +70,7 @@ console.log("no getter", bindable.city.name); // { name: "SF" }
 Sets a value to the bindable object
 
 ```javascript
-var bindable = require("bindable@0.6.1");
-var obj = new bindable.Object();
+var obj = new BindableObject();
 obj.set("city.name", "SF");
 console.log(obj.get("city.name")); // SF
 ```
@@ -80,8 +80,7 @@ console.log(obj.get("city.name")); // SF
 sets multiple properties on the bindable object
 
 ```javascript
-var bindable = require("bindable@0.6.1");
-var person = new bindable.Object();
+var person = new BindableObject();
 person.setProperties({
   firstName: "Jon",
   lastName: "Doe"
@@ -94,8 +93,7 @@ console.log(person.get("firstName"), person.get("lastName")); // Jon Doe
 Returns true if the bindable object has a given property
 
 ```javascript
-var bindable = require("bindable@0.6.1");
-var obj = new bindable.Object({ count: 0, male: false, name: "craig" });
+var obj = new BindableObject({ count: 0, male: false, name: "craig" });
 
 console.log(obj.has("count")); // true
 console.log(obj.has("male")); // true
@@ -112,8 +110,7 @@ adds a new listener to the bindable object
 emits a new event
 
 ```javascript
-var bindable = require("bindable@0.6.1");
-var person = new bindable.Object();
+var person = new BindableObject();
 
 person.on("blarg", function (arg1, arg2) {
   console.log(arg1, arg2);
@@ -128,7 +125,7 @@ listens to one event, then disposes the listener.
 
 ```javascript
 var bindable = require("bindable@0.6.1");
-var person = new bindable.Object();
+var person = new BindableObject();
 
 person.once("blarg", function (arg1, arg2) {
   console.log(arg1, arg2);
@@ -154,8 +151,7 @@ returns all the listeners on the bindable object
 
 
 ```javascript
-var bindable = require("bindable");
-var obj = new bindable.Object({ name: "craig" });
+var obj = new BindableObject({ name: "craig" });
 
 // bind the name, but transform it to upper case
 obj.bind("name", { to: "name2", map: function (name) {
@@ -174,7 +170,7 @@ Executes a binding now
 
 ```javascript
 var bindable = require("bindable");
-var person = new bindable.Object({ name: "jeff" });
+var person = new BindableObject({ name: "jeff" });
 person.bind("name", function (name, oldName) {
   console.log("binding called, name is: ", name);
 }).now();
@@ -190,7 +186,7 @@ Disposes a binding
 
 ```javascript
 var bindable = require("bindable");
-var person = new bindable.Object({ name: "jeff" });
+var person = new BindableObject({ name: "jeff" });
 
 var binding = person.bind("name", function (name, oldName) {
   console.log("binding called, name is: ", name);
@@ -212,8 +208,7 @@ Bindable objects emit a few events:
 - `dispose` - emitted when `dispose()` is called on a bindable object
 
 ```javascript
-var bindable = require("bindable");
-var person = new bindable.Object({ name: "jeff" });
+var person = new BindableObject({ name: "jeff" });
 
 person.on("change:name", function (newName) {
   console.log("the name changed to", newName);
