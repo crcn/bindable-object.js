@@ -1,0 +1,24 @@
+{
+  "name": "bindable-object",
+  "version": "0.0.3",
+  "description": "Two-way data binding means linking properties of two separate objects - when one changes, the other will automatically update with that change.  It enables much easier interactions between data models and UIs, among other uses outside of MVC.",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mojo-js/bindable-object.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mojo-js/bindable-object.js/issues"
+  },
+  "homepage": "https://github.com/mojo-js/bindable-object.js",
+  "dependencies": {
+    "fast-event-emitter": "0.0.x",
+    "frame-runner": "0.0.x",
+    "toarray": "0.0.1"
+  }
+}
