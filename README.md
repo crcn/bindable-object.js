@@ -4,7 +4,7 @@ Fast data-binding library
 
 Two-way data binding means linking properties of two separate objects - when one changes, the other will automatically update with that change.  It enables much easier interactions between data models and UIs, among other uses outside of MVC.
 
-
+### Example
 
 ```javascript
 var BindableObject = require("bindable-object");
