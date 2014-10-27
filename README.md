@@ -124,7 +124,6 @@ person.emit("blarg", "something!", "something again!!");
 listens to one event, then disposes the listener.
 
 ```javascript
-var bindable = require("bindable@0.6.1");
 var person = new BindableObject();
 
 person.once("blarg", function (arg1, arg2) {
