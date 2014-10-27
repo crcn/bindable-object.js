@@ -25,21 +25,12 @@ person.bind("location.zip", function(value) {
 person.set("location.zip", "94102");
 
 //bind location.zip to another property in the model, and do it only once
-person.bind("location.zip", { to: "zip", max: 1 }).now();
+person.bind("location.zip", function (zip) {
+  console.log(zip); // 94102
+}).now();
 
-//bind location.zip to another object, and make it bi-directional.
-person.bind("location.zip", { target: anotherModel, to: "location.zip", bothWays: true }).now();
-
-//chain to multiple items, and limit it!
-person.bind("location.zip", { to: ["property", "anotherProperty"], max: 1 }).now();
-
-
-//you can also transform data as it's being bound
-person.bind("name", {
-  to: "name2",
-  map: function (name) {
-    return name.toUpperCase();
-  }
+person.bind("name, last", function (fn, ln) {
+  console.log(fn, ln); // craig condon
 }).now();
 ```
 
