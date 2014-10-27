@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/mojo-js/bindable-object.js.svg?branch=master)](https://travis-ci.org/mojo-js/bindable-object.js)
 
 Two-way data binding means linking properties of two separate objects - when one changes, the other will automatically update with that change.  It enables much easier interactions between data models and UIs, among other uses outside of MVC.
 

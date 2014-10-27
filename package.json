@@ -19,5 +19,9 @@
   "dependencies": {
     "fast-event-emitter": "0.0.x",
     "toarray": "0.0.1"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.0.1"
   }
 }
