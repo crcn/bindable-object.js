@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mojo-js/bindable-object.js.svg?branch=master)](https://travis-ci.org/mojo-js/bindable-object.js)
+[![Build Status](https://travis-ci.org/mojo-js/bindable-object.js.svg?branch=master)](https://travis-ci.org/mojo-js/bindable-object.js) [![Coverage Status](https://coveralls.io/repos/mojo-js/bindable-object.js/badge.svg?branch=master)](https://coveralls.io/r/mojo-js/bindable-object.js?branch=master)
 
 Fast data-binding library 
 

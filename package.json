@@ -4,7 +4,7 @@
   "description": "Two-way data binding means linking properties of two separate objects - when one changes, the other will automatically update with that change.  It enables much easier interactions between data models and UIs, among other uses outside of MVC.",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "make test-coveralls test-karma"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,16 @@
     "toarray": "0.0.1"
   },
   "devDependencies": {
+    "coveralls": "^2.11.2",
     "expect.js": "^0.3.1",
-    "mocha": "^2.0.1"
+    "istanbul": "^0.3.5",
+    "karma": "^0.12.31",
+    "karma-browserify": "^3.0.1",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-mocha": "^0.1.10",
+    "karma-safari-launcher": "^0.1.1",
+    "mocha": "^1.15.1",
+    "xtend": "^4.0.0"
   }
 }
