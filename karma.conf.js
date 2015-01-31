@@ -54,13 +54,20 @@ module.exports = function(config) {
       os: 'OS X',
       os_version: 'Yosemite'
     },
-    /*bs_ie_9: {
+    bs_ie_8: {
       base: 'BrowserStack',
       browser: 'ie',
       browser_version: '9.0',
       os: 'Windows',
       os_version: '7'
-    },*/
+    },
+    bs_ie_9: {
+      base: 'BrowserStack',
+      browser: 'ie',
+      browser_version: '8.0',
+      os: 'Windows',
+      os_version: 'XP'
+    },
     bs_ie_10: {
       base: 'BrowserStack',
       browser: 'ie',
